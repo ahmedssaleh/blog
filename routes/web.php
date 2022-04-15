@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,34 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', 'TasksController@index') ;
 
 
-
-Route::get('/task/{id}', function ($id) {
-    $tasks = [
-        '1'=>'task 1',
-        '2'=>'task 2',
-        '3' =>'task 3',
-        '4 '=>'task 4'
-    ];
-    $task=$tasks[$id];
-    return view ('task',compact('task'));
-});
+Route::post('task','TasksController@store' );
 
 
-
-
-
-
-
-
-
-Route::get('about',function () {
-//    return view('about');
-$tasks = [
-    '1'=>'task 1',
-    '2'=>'task 2',
-    '3' =>'task 3',
-    '4'=>'task 4'];
-   return view ('about',compact('tasks'));
-});
+Route::delete('task/{task}/delete','TasksController@destory');

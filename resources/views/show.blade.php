@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>okey
-    <h1>{{$task}}</h1>
+    <h1>{{$task->name}}</h1>
 
 </body>
 </html>
